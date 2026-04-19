@@ -175,63 +175,95 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 })();
 
-// ─── EARLY ACCESS FORM ─────────────────────────
+// ─── EARLY ACCESS FORM & WAITLIST DYNAMIC TRACKING ─────────
 (function() {
   const form    = document.getElementById('eaForm');
   const success = document.getElementById('eaSuccess');
-  const numEl   = document.getElementById('eaNum');
-  const countEl = document.getElementById('eaCount');
   const btn     = document.getElementById('eaBtn');
+  
+  // Real-time counter logic via NTFY
+  const SIGNUP_TOPIC = 'foundri_live_signups_v2';
+  const NTFY_SIGNUP_URL = `https://ntfy.sh/${SIGNUP_TOPIC}`;
+  
+  let localWaitlist = parseInt(localStorage.getItem('foundri_base_signups') || '847');
+  
+  function updateWaitlistDOM(count) {
+     // Waitlist counters
+     document.querySelectorAll('.waitlist-count-display').forEach(e => e.textContent = count);
+     const eaCount = document.getElementById('eaCount');
+     if(eaCount) eaCount.textContent = count;
+     
+     // Percentage
+     document.querySelectorAll('.ea-pct').forEach(e => e.textContent = (count / 10).toFixed(1) + '%');
+     
+     // Stats grid (need to update data-to so the animation doesn't revert to 847)
+     document.querySelectorAll('.stn').forEach(el => {
+        if(el.dataset.to == "847" || el.dataset.to == (count-1)) {
+           el.dataset.to = count;
+           el.textContent = count; // update immediate
+        }
+     });
+     
+     // Spots left
+     const left = 1000 - count;
+     document.querySelectorAll('.stn').forEach(el => {
+        if(el.dataset.to == "153" || el.dataset.to == (left+1)) {
+           el.dataset.to = left;
+           el.textContent = left;
+        }
+     });
+     
+     const eaNote = document.querySelector('.ea-pnote strong');
+     if(eaNote) eaNote.textContent = left + ' spots';
+     
+     const fill = document.getElementById('eaFill');
+     if(fill) fill.style.width = ((count/1000) * 100) + '%';
+     
+     // Top hero chip logic
+     const hChip = document.querySelector('.h-chip');
+     if(hChip) {
+         // Rebuild the HTML content to avoid regex backslash mismatches 
+         hChip.innerHTML = '<span class="chip-dot"></span>' + count + ' / 1000 Founding Spots Taken';
+     }
+  }
+  
+  updateWaitlistDOM(localWaitlist);
+
+  // Listen for realtime signups
+  const es = new EventSource(`${NTFY_SIGNUP_URL}/sse`);
+  es.onmessage = (e) => {
+      const data = JSON.parse(e.data);
+      if(data.event === 'message') {
+         localWaitlist++;
+         localStorage.setItem('foundri_base_signups', localWaitlist);
+         updateWaitlistDOM(localWaitlist);
+      }
+  };
+
   if (!form) return;
 
   form.addEventListener('submit', async e => {
-    // If Formspree is set up, let it handle submission normally
-    // Otherwise we fall back to localStorage
+    e.preventDefault();
+    
     const action = form.getAttribute('action');
-    const isFormspreeConfigured = action && !action.includes('YOUR_FORMSPREE_ID');
-
-    if (!isFormspreeConfigured) {
-      e.preventDefault(); // prevent actual submit if not configured
-    }
-
-    // Optimistic UI update
     btn.textContent = 'Claiming your spot...';
     btn.disabled = true;
+    btn.style.boxShadow = 'none';
 
-    // Store locally regardless
-    const existing = JSON.parse(localStorage.getItem('foundri_ea') || '[]');
-    const email = document.getElementById('eaEmail').value.trim();
-    const isDupe = existing.some(s => s.email.toLowerCase() === email.toLowerCase());
+    try {
+      // Background submit the Web3Form
+      if(!action.includes('YOUR_ACCESS_KEY_HERE')) {
+         await fetch(action, { method: 'POST', body: new FormData(form) });
+      }
+      
+      // Ping pub/sub for global real-time +1 increment
+      await fetch(NTFY_SIGNUP_URL, { method: 'POST', body: 'signup' });
+    } catch(err) {
+      console.warn("Form submission exception:", err);
+    }
     
-    if (isDupe) {
-      btn.textContent = '✓ Already registered!';
-      btn.style.background = '#10B981';
-      setTimeout(() => { btn.textContent = 'Claim My Founding Spot →'; btn.disabled = false; btn.style.background = ''; }, 2500);
-      if (!isFormspreeConfigured) return;
-    }
-
-    const memberNum = 847 + existing.length + 1;
-    existing.push({
-      name: document.getElementById('eaName').value.trim(),
-      email, memberNum,
-      role: document.getElementById('eaRole').value,
-      ts: new Date().toISOString()
-    });
-    localStorage.setItem('foundri_ea', JSON.stringify(existing));
-
-    if (numEl)   numEl.textContent   = memberNum;
-    if (countEl) countEl.textContent = memberNum;
-
-    if (!isFormspreeConfigured) {
-      // Show success without Formspree
-      form.style.display = 'none';
-      success.classList.remove('hidden');
-    } else {
-      // Formspree will handle redirect/success, but show our UI too
-      await new Promise(r => setTimeout(r, 800));
-      form.style.display = 'none';
-      success.classList.remove('hidden');
-    }
+    form.style.display = 'none';
+    if(success) success.classList.remove('hidden');
   });
 })();
 
@@ -450,14 +482,62 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   }, 60000);
 })();
 
-// ─── HERO BADGE — sync with localStorage ───────
+// ─── SUPER PREMIUM FEEDBACK FORM ───────────────
 (function() {
-  const saved = JSON.parse(localStorage.getItem('foundri_ea') || '[]');
-  const total = 847 + saved.length;
-  const chip  = document.querySelector('.h-chip');
-  if (chip) chip.innerHTML = chip.innerHTML.replace('847 / 1000', total + ' / 1000');
-  const ea = document.getElementById('eaCount');
-  if (ea) ea.textContent = total;
+  const stars  = document.querySelectorAll('#starRating span');
+  const input  = document.getElementById('fbRatingVal');
+  const form   = document.getElementById('fbForm');
+  const succ   = document.getElementById('fbSuccess');
+  const btn    = document.getElementById('fbBtn');
+  
+  if(!stars.length) return;
+  
+  let rating = 0;
+  
+  stars.forEach(s => {
+    s.addEventListener('mouseover', function() {
+       resetStars();
+       const val = this.dataset.val;
+       for(let i=0; i<val; i++) stars[i].style.color = 'var(--amber)';
+    });
+    s.addEventListener('mouseout', function() { setStars(rating); });
+    s.addEventListener('click', function() {
+       rating = this.dataset.val;
+       input.value = rating;
+       setStars(rating);
+       
+       // Cool pop effect
+       this.style.transform = 'scale(1.3)';
+       setTimeout(() => { this.style.transform = 'scale(1)'; }, 150);
+    });
+  });
+  
+  function resetStars() {
+     stars.forEach(s => { s.style.color = 'var(--dim)'; s.style.transform = 'scale(1)'; });
+  }
+  function setStars(val) {
+     resetStars();
+     for(let i=0; i<val; i++) stars[i].style.color = 'var(--amber)';
+  }
+  
+  if(form) {
+    form.addEventListener('submit', async e => {
+       e.preventDefault();
+       if(!rating) { alert("Please tap a star to give a rating!"); return; }
+       
+       btn.textContent = 'Sending securely...';
+       btn.disabled = true;
+       
+       try {
+         await fetch(form.action, { method: 'POST', body: new FormData(form) });
+         form.style.display = 'none';
+         succ.style.display = 'block';
+       } catch(err) {
+         btn.textContent = 'Try Again';
+         btn.disabled = false;
+       }
+    });
+  }
 })();
 
 // ─── PARALLAX BLOBS ─────────────────────────────

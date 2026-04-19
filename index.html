@@ -289,6 +289,13 @@
                     id="chatLive">Live</span></small></div>
               <span class="ct-badge">Beta</span>
             </div>
+            <div class="chat-pinned" style="background:rgba(255,107,43,0.06); padding:12px 18px; border-bottom:1px solid var(--bdr2); display:flex; gap:12px; align-items:flex-start;">
+               <span style="font-size:1.1rem; line-height:1.2;">📌</span>
+               <div>
+                 <strong style="color:var(--fire); display:block; font-size:0.7rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:2px;">Pinned by Devansh (Admin)</strong>
+                 <span style="color:var(--text); font-size:0.83rem; line-height:1.4; display:block;">Welcome to the most authentic startup space in India! Drop your intro and what you're building below. 🚀</span>
+               </div>
+            </div>
             <div class="chat-feed" id="chatFeed">
               <div class="chat-placeholder" id="chatPlaceholder">
                 <div class="dots"><span></span><span></span><span></span></div>
@@ -362,7 +369,9 @@
                     <option>College Student Building</option>
                     <option>Early Stage Founder</option>
                     <option>Developer / Builder</option>
-                    <option>Aspiring Founder</option>
+                    <option>Video Editor / Graphic Designer</option>
+                    <option>Mentor / Investor</option>
+                    <option>Other</option>
                   </select>
                 </div>
                 <div class="fg">
@@ -422,19 +431,33 @@
           <a href="#early-access" class="el">Get Early Access →</a>
         </div>
       </div>
-      <div class="founder-card reveal">
-        <div class="fq">"</div>
-        <div class="fav-row">
-          <div class="fav">D</div>
-          <div class="fai"><strong>Devansh Tiwari</strong><span>Founder, Bharvix · 19 · Lucknow, UP 🇮🇳</span></div>
+      <div class="founders-row" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;">
+        <div class="founder-card reveal" style="padding:28px;">
+          <div class="fq">"</div>
+          <div class="fav-row">
+            <div class="fav">D</div>
+            <div class="fai"><strong>Devansh Tiwari</strong><span>Founder & CEO, Bharvix · Lucknow 🇮🇳</span></div>
+          </div>
+          <blockquote>I built Foundri because I felt the loneliness of building alone. LinkedIn is a corporate job board. Discord is chaotic. WhatsApp groups can't scale. Young Indian founders need a place to find their tribe.</blockquote>
+          <div class="fbadges">
+            <span>IIT Madras (BS)</span>
+            <span>Chandigarh University, Lucknow</span>
+            <span>Building Bharvix</span>
+          </div>
         </div>
-        <blockquote>I started Foundri because I felt the loneliness of building alone at 19. LinkedIn wasn't for me —
-          it's a job board. Discord was chaotic. WhatsApp groups couldn't scale. I kept asking: where do young Indian
-          founders actually go to find their people? The answer was nowhere. So I built it.</blockquote>
-        <div class="fbadges">
-          <span>BCA Honours, CU Lucknow</span>
-          <span>BS Data Science, IIT Madras</span>
-          <span>Building Bharvix since 2025</span>
+
+        <div class="founder-card reveal" style="padding:28px;">
+          <div class="fq">"</div>
+          <div class="fav-row">
+            <div class="fav" style="--c:#8B5CF6">H</div>
+            <div class="fai"><strong>Harshit Kumar</strong><span>Co-Founder, Foundri · India 🇮🇳</span></div>
+          </div>
+          <blockquote>Great products are built by great teams, but finding the right people early on is the hardest part. We're creating the operating system where true connections happen instantly, without the noise.</blockquote>
+          <div class="fbadges">
+            <span>IIT Madras (BS)</span>
+            <span>Co-Founder</span>
+            <span>Tech Innovator</span>
+          </div>
         </div>
       </div>
     </div>
@@ -445,13 +468,40 @@
     <div class="container">
       <div class="fct">
         <div class="fct-glow"></div>
-        <div class="sec-tag">Join 847+ Founders</div>
+        <div class="sec-tag">Join <span class="waitlist-count-display">847</span>+ Founders</div>
         <h2 class="fct-h">Stop building<br>alone.</h2>
         <p>Your co-founder might already be in the feed. Your first mentor is one post away. Your tribe is here.</p>
         <div class="fct-btns">
           <a href="#community" class="btn-pri large">Enter the Community</a>
           <a href="#early-access" class="btn-out large">Secure Your Spot</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback" style="background:var(--bg2); border-top:1px solid var(--bdr2); padding-bottom:100px;">
+    <div class="container" style="max-width:600px;">
+      <div class="sec-tag" style="margin-bottom:16px; justify-content:center; display:flex; margin:0 auto 16px; width:fit-content;">Platform Feedback</div>
+      <h2 class="sec-h" style="text-align:center;">Help us improve <br><em>Foundri.</em></h2>
+      <form id="fbForm" action="https://api.web3forms.com/submit" method="POST" style="background:var(--card); padding:32px; border-radius:16px; border:1px solid var(--bdr2); margin-top:30px; box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+        <input type="hidden" name="access_key" value="18d56544-0edf-4191-b57f-532f214a7d1c">
+        <input type="hidden" name="subject" value="🌟 New Foundri Feedback / Rating!">
+        <p style="text-align:center; font-size:0.85rem; color:var(--muted); margin-bottom:12px;">Rate your experience</p>
+        <div class="stars" style="display:flex; justify-content:center; gap:12px; margin-bottom:24px; font-size:2.4rem; cursor:pointer; color:var(--dim); transition:color 0.2s;" id="starRating">
+           <span data-val="1" style="transition:color 0.2s;">★</span><span data-val="2" style="transition:color 0.2s;">★</span><span data-val="3" style="transition:color 0.2s;">★</span><span data-val="4" style="transition:color 0.2s;">★</span><span data-val="5" style="transition:color 0.2s;">★</span>
+        </div>
+        <input type="hidden" name="rating" id="fbRatingVal" value="" required>
+        <div class="fg">
+          <label>Any problems, bugs, or suggestions?</label>
+          <textarea name="message" rows="4" style="width:100%; background:var(--bg); border:1px solid var(--bdr2); border-radius:10px; color:var(--text); padding:16px; font-family:inherit; font-size:0.9rem; resize:vertical; outline:none; transition:border-color 0.2s;" placeholder="Tell us what you loved or what's broken... e.g. Add dark mode toggle!" required onfocus="this.style.borderColor='var(--fire)'" onblur="this.style.borderColor='var(--bdr2)'"></textarea>
+        </div>
+        <button class="btn-pri full" type="submit" style="margin-top:14px; padding:16px; font-size:1rem;" id="fbBtn">Send Feedback anonymously</button>
+      </form>
+      <div id="fbSuccess" style="display:none; text-align:center; padding:40px; background:var(--card); border:1px solid rgba(16, 185, 129, 0.3); border-radius:16px; margin-top:30px;">
+        <span style="font-size:3rem; margin-bottom:10px; display:block;">💚</span>
+        <h3 style="font-family:'Syne',sans-serif; font-size:1.2rem; color:var(--text);">Feedback received!</h3>
+        <p style="color:var(--muted); font-size:0.9rem; margin-top:8px;">Thank you for making Foundri better for everyone.</p>
       </div>
     </div>
   </section>

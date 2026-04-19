@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundri — Where Founders Are Forged</title>
+  <meta name="description"
+    content="India's community for early-stage founders, college builders, and young entrepreneurs. Connect. Build. Rise.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!--
+  ════════════════════════════════════════════════
+  FORMS SETUP — Get user details directly in your email!
+  ════════════════════════════════════════════════
+  1. Go to https://web3forms.com 
+  2. Enter your email to get a free Access Key.
+  3. Scroll down to Line ~280 and replace YOUR_ACCESS_KEY_HERE with your key.
+  ════════════════════════════════════════════════
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="grain"></div>
+  <canvas id="net"></canvas>
+  <div id="cursor"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="logo-link">
+        <img src="logo.png" alt="Foundri" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-r">
+        <span class="nav-live"><span class="ld"></span>Live Beta</span>
+        <a href="#early-access" class="nav-cta">Get Early Access</a>
+      </div>
+      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mob-nav" id="mobNav">
+      <a href="#features">Features</a>
+      <a href="#community">Community</a>
+      <a href="#about">About</a>
+      <a href="#early-access" class="mob-cta">Get Early Access</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <!-- HERO (AWWWARDS DALA STYLE) -->
+  <section id="hero" class="hero-dala">
+    <!-- Ambient 3D Graphic positioned to the right -->
+    <img src="awwwards-bg.png" alt="3D Startup Ecosystem Network" class="hero-bg-dala">
+    
+    <div class="container hero-container">
+      <div class="hero-content">
+        <!-- Minimal Orange Tag -->
+        <div class="hero-tag">STOP BUILDING ALONE. START COLLABORATING.</div>
+        
+        <!-- Ultra Clean Left-Aligned Header -->
+        <h1 class="hero-h1">Unlock collective<br>startup wisdom.</h1>
+        
+        <p class="hero-desc">
+          Plug into India's most ambitious shared brainpower. Ask the Foundri community to find a co-founder, validate your idea, or secure early funding. Focus on doing your best work with context, conviction, and clarity.
+        </p>
+        
+        <div class="hero-action">
+          <a href="#early-access" class="btn-dala">REQUEST ACCESS</a>
+          
+          <div class="proof-avs">
+            <div class="pav" style="--c:#3B82F6">D</div>
+            <div class="pav" style="--c:#10B981">P</div>
+            <div class="pav" style="--c:#F59E0B">R</div>
+            <div class="pav" style="--c:#EF4444">S</div>
+            <div class="pav more">+492</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="t-track">
+      <span>Find Co-founders</span><i>◆</i><span>Build Together</span><i>◆</i><span>Get
+        Mentorship</span><i>◆</i><span>Ship Faster</span><i>◆</i><span>India's Builder
+        Community</span><i>◆</i><span>College Founders Welcome</span><i>◆</i><span>Real
+        Connections</span><i>◆</i><span>Early Stage &amp; Proud</span><i>◆</i><span>Find
+        Co-founders</span><i>◆</i><span>Build Together</span><i>◆</i><span>Get Mentorship</span><i>◆</i><span>Ship
+        Faster</span><i>◆</i><span>India's Builder Community</span><i>◆</i><span>College Founders
+        Welcome</span><i>◆</i><span>Real Connections</span><i>◆</i><span>Early Stage &amp; Proud</span><i>◆</i>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stt"><span class="stn" data-to="497">0</span><span class="stl">Founders Waiting</span></div>
+        <div class="std"></div>
+        <div class="stt"><span class="stn" data-to="503">0</span><span class="stl">Spots Left</span></div>
+        <div class="std"></div>
+        <div class="stt"><span class="stn" data-to="100">0</span><span class="stl">% Free for Early Members</span></div>
+        <div class="std"></div>
+        <div class="stt"><span class="stn hash">#1</span><span class="stl">India Founder OS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="container">
+      <div class="sec-tag">The Problem</div>
+      <h2 class="sec-h">You're building alone.<br><em>You shouldn't be.</em></h2>
+      <div class="prob-grid">
+        <div class="prob-card reveal" data-tilt>
+          <div class="pi" style="color:#0A66C2"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg></div>
+          <h3>LinkedIn</h3>
+          <p>Built for job seekers, not builders. Corporate updates and humblebrag posts. Zero real founder
+            conversations happen there.</p>
+          <div class="verd">❌ Not built for founders</div>
+        </div>
+        <div class="prob-card reveal" data-tilt>
+          <div class="pi" style="color:#5865F2"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.031.054a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+            </svg></div>
+          <h3>Discord</h3>
+          <p>500 channels, 1000 pings, zero structure. You're looking for the right person in a sea of memes and
+            off-topic noise.</p>
+          <div class="verd">❌ Too much noise</div>
+        </div>
+        <div class="prob-card reveal" data-tilt>
+          <div class="pi" style="color:#25D366"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M11.998 0C5.372 0 0 5.373 0 12c0 2.114.549 4.099 1.506 5.827L.057 23.743l6.086-1.414A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.625 0 11.998 0zm.002 22c-1.791 0-3.479-.473-4.943-1.297l-.354-.21-3.614.839.872-3.525-.23-.369A9.987 9.987 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg></div>
+          <h3>WhatsApp Groups</h3>
+          <p>Good vibes, but capped at 1024 members, no profiles, no discovery, no real threading. Can't scale into a
+            real community.</p>
+          <div class="verd">❌ Can't scale</div>
+        </div>
+      </div>
+      <div class="prob-end reveal">
+        <div class="pe-line"></div>
+        <p>There's no platform built for <strong>early-stage Indian founders</strong> to connect, collaborate, and grow.
+        </p>
+        <div class="pe-word">Until now.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <div class="sec-tag">What Foundri Offers</div>
+      <h2 class="sec-h">Built for builders.<br><em>Not job seekers.</em></h2>
+      <div class="feat-grid">
+        <div class="feat-card is-live reveal" data-tilt>
+          <div class="fl-bar"></div>
+          <div class="fs live-fs">🟢 Live Now</div>
+          <div class="fi">💬</div>
+          <h3>Community Feed</h3>
+          <p>Real-time founder feed — share wins, ask questions, find co-builders. No WhatsApp limits. No Discord chaos.
+            Just real conversations.</p>
+          <a href="#community" class="fc-link">Open Community →</a>
+        </div>
+        <div class="feat-card reveal" data-tilt>
+          <div class="fs soon-fs">🔜 Coming Soon</div>
+          <div class="fi">👤</div>
+          <h3>Founder Profiles</h3>
+          <p>Your builder identity — projects, skills, stage, what you're looking for. Not a resume. A founder card that
+            actually speaks.</p>
+        </div>
+        <div class="feat-card reveal" data-tilt>
+          <div class="fs soon-fs">🔜 Coming Soon</div>
+          <div class="fi">🤝</div>
+          <h3>Co-founder Match</h3>
+          <p>Smart matching based on skills, domain, and vision. Find your missing piece — technical or business, the
+            right fit for your idea.</p>
+        </div>
+        <div class="feat-card reveal" data-tilt>
+          <div class="fs soon-fs">🔜 Coming Soon</div>
+          <div class="fi">⚡</div>
+          <h3>Build Sprints</h3>
+          <p>48-hour virtual build sprints. Ship real things together, compete, get honest community feedback in
+            real-time.</p>
+        </div>
+        <div class="feat-card reveal" data-tilt>
+          <div class="fs soon-fs">🔜 Coming Soon</div>
+          <div class="fi">🎯</div>
+          <h3>Mentor Access</h3>
+          <p>Direct access to founders who've been where you are. Real talk, not generic LinkedIn advice from strangers.
+          </p>
+        </div>
+        <div class="feat-card reveal" data-tilt>
+          <div class="fs soon-fs">🔜 Coming Soon</div>
+          <div class="fi">📚</div>
+          <h3>Builder Playbooks</h3>
+          <p>Stage-specific resources — legal templates, GTM guides, pitch structures, and cold email scripts that
+            actually get replies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY CHAT -->
+  <section id="community">
+    <div class="container">
+      <div class="comm-layout">
+        <div class="comm-l">
+          <div class="sec-tag">Live Community Feed</div>
+          <h2 class="sec-h">Your tribe<br>is already<br><em>here.</em></h2>
+          <p class="comm-p">Drop a message. Meet a founder. Find your co-builder. This is a real-time community — not a
+            WhatsApp redirect. Real founders, real conversations, right here.</p>
+          <div class="comm-meta">
+            <div class="cm-item"><span id="onlineCount" class="cm-n">—</span><span class="cm-l">in community</span>
+            </div>
+            <div class="cm-div"></div>
+            <div class="cm-item"><span class="cm-n" style="color:#25D366">Live</span><span class="cm-l">right now</span>
+            </div>
+          </div>
+          <div class="comm-rows">
+            <div class="cr">✓ Real-time messages from real founders</div>
+            <div class="cr">✓ No bots, no spam, no algorithms</div>
+            <div class="cr">✓ Moderated by Devansh personally</div>
+            <div class="cr">✓ Free to use, forever</div>
+          </div>
+          <div class="comm-links"
+            style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; position: relative; z-index: 100;">
+            <a href="https://chat.whatsapp.com/L2l0yWaoJx3IVYsfeFZc58" target="_blank" rel="noopener noreferrer"
+              class="btn-pri"
+              style="background: #25D366; color: #fff; border: none; display: flex; align-items: center; gap: 0.5rem; flex: 1; justify-content: center; padding: 0.8rem 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                  d="M11.998 0C5.372 0 0 5.373 0 12c0 2.114.549 4.099 1.506 5.827L.057 23.743l6.086-1.414A11.942 11.942 0 0012 24c6.627 0 12-5.373 12-12S18.625 0 11.998 0zm.002 22c-1.791 0-3.479-.473-4.943-1.297l-.354-.21-3.614.839.872-3.525-.23-.369A9.987 9.987 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+              </svg>
+              Join WhatsApp
+            </a>
+            <a href="https://instagram.com/bharvix" target="_blank" rel="noopener noreferrer" class="btn-out"
+              style="display: flex; align-items: center; gap: 0.5rem; flex: 1; justify-content: center; padding: 0.8rem 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+        <div class="comm-r">
+          <div class="chat-box" style="background:rgba(20, 18, 16, 0.6); backdrop-filter:blur(30px); border:1px solid rgba(255,107,43,0.15); box-shadow:0 30px 100px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,107,43,0.05); transform:perspective(1000px) rotateY(-5deg) translateY(-10px); transition:transform 0.5s;">
+            <div class="chat-top">
+              <div class="ct-logo">F°</div>
+              <div class="ct-info"><strong>Foundri Community</strong><small><span class="ld sm"></span> <span
+                    id="chatLive">Live</span></small></div>
+              <span class="ct-badge">Beta</span>
+            </div>
+            <div class="chat-pinned" style="background:rgba(255,107,43,0.06); padding:12px 18px; border-bottom:1px solid var(--bdr2); display:flex; gap:12px; align-items:flex-start;">
+               <span style="font-size:1.1rem; line-height:1.2;">📌</span>
+               <div>
+                 <strong style="color:var(--fire); display:block; font-size:0.7rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:2px;">Pinned by Devansh (Admin)</strong>
+                 <span style="color:var(--text); font-size:0.83rem; line-height:1.4; display:block;">Welcome to the most authentic startup space in India! Drop your intro and what you're building below. 🚀</span>
+               </div>
+            </div>
+            <div class="chat-feed" id="chatFeed">
+              <div class="chat-placeholder" id="chatPlaceholder">
+                <div class="dots"><span></span><span></span><span></span></div>
+                <p>Connecting to community...</p>
+              </div>
+            </div>
+            <div class="chat-comp">
+              <input type="text" id="chatName" class="cn-inp" placeholder="Your name" maxlength="30">
+              <div class="cm-row">
+                <input type="text" id="chatMsg" class="cm-inp" placeholder="Say something to the community..."
+                  maxlength="280">
+                <button id="chatSend" class="cs-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                </button>
+              </div>
+              <p class="chat-hint">Enter to send · Be kind · Stay real</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY ACCESS -->
+  <section id="early-access">
+    <div class="container">
+      <div class="ea-layout">
+        <div class="ea-l">
+          <div class="sec-tag">Founding Member</div>
+          <h2 class="sec-h">Get in before<br>the doors<br><em>close.</em></h2>
+          <p class="ea-sub">Only 1000 founding member spots. Once they're gone, they're gone.</p>
+          <ul class="ea-list">
+            <li><span>🏆</span>Founding Member badge — forever on your profile</li>
+            <li><span>⚡</span>First access to every feature we ship</li>
+            <li><span>🎯</span>Direct line to Devansh &amp; the Bharvix team</li>
+            <li><span>🆓</span>Free forever — early members never pay</li>
+            <li><span>💡</span>Vote on and shape the product roadmap</li>
+            <li><span>🇮🇳</span>Be part of India's first Founder OS story</li>
+          </ul>
+        </div>
+        <div class="ea-r">
+          <div class="ea-card">
+            <div class="ea-prog-wrap">
+              <div class="ea-prow">
+                <span><strong id="eaCount">497</strong>/1000 spots claimed</span>
+                <span class="ea-pct">49.7%</span>
+              </div>
+              <div class="ea-pbg">
+                <div class="ea-pfill" id="eaFill"></div>
+              </div>
+              <p class="ea-pnote">🔥 Only <strong>503 spots</strong> remaining</p>
+            </div>
+            <form id="eaForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="18d56544-0edf-4191-b57f-532f214a7d1c">
+              <div class="fg">
+                <label>Full Name</label>
+                <input type="text" name="name" id="eaName" placeholder="Devansh Tiwari" required>
+              </div>
+              <div class="fg">
+                <label>Email Address</label>
+                <input type="email" name="email" id="eaEmail" placeholder="you@email.com" required>
+              </div>
+              <div class="fg-2">
+                <div class="fg">
+                  <label>I am a...</label>
+                  <select name="role" id="eaRole" required>
+                    <option value="" disabled selected>Select</option>
+                    <option>College Student Building</option>
+                    <option>Early Stage Founder</option>
+                    <option>Developer / Builder</option>
+                    <option>Video Editor / Graphic Designer</option>
+                    <option>Mentor / Investor</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="fg">
+                  <label>College / City</label>
+                  <input type="text" name="college" placeholder="IIT Madras / Lucknow">
+                </div>
+              </div>
+              <div class="fg">
+                <label>What are you building? <em>(optional)</em></label>
+                <input type="text" name="building" placeholder="e.g. AI tool for creators">
+              </div>
+              <input type="hidden" name="_subject" value="🚀 New Foundri Early Access Signup!">
+              <button type="submit" class="btn-pri full" id="eaBtn">Claim My Founding Spot →</button>
+              <p class="form-note">No spam. No newsletters. Just your community invite when we go live.</p>
+            </form>
+            <div id="eaSuccess" class="ea-succ hidden">
+              <div class="es-glow"></div>
+              <div class="es-icon">🎉</div>
+              <h3>You're Founding Member #<span id="eaNum">498</span></h3>
+              <p>Welcome to Foundri. We'll email your community access invite soon.</p>
+              <p class="es-tip">While you wait — jump into the live feed and introduce yourself!</p>
+              <a href="#community" class="btn-pri" style="margin-top:20px;display:inline-flex">Go to Community →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-tag">The Bharvix Ecosystem</div>
+      <h2 class="sec-h">Built by Bharvix.<br><em>For India's builders.</em></h2>
+      <p class="about-p">Foundri isn't standalone. It's the community layer of a bigger mission — giving India's young
+        founders the tools, connections, and resources they need to win.</p>
+      <div class="eco-grid">
+        <div class="eco-card reveal" data-tilt>
+          <div class="ep">Parent Brand</div>
+          <div class="en">Bharvix</div>
+          <p>The parent brand behind everything. Building products and communities for India's next generation of
+            founders and creators.</p>
+          <a href="https://instagram.com/bharvix" target="_blank" class="el">Follow @bharvix →</a>
+        </div>
+        <div class="eco-card eco-feat reveal" data-tilt>
+          <div class="ep fire-ep">Flagship Product</div>
+          <div class="en">UniPost AI</div>
+          <p>India's first Creator OS. AI-powered content scheduling, caption generation, and publishing for vernacular
+            creators and personal brands.</p>
+          <a href="#" class="el">Visit UniPost →</a>
+        </div>
+        <div class="eco-card eco-here reveal" data-tilt>
+          <div class="ep green-ep">📍 You Are Here</div>
+          <div class="en">Foundri</div>
+          <p>The community layer. Where early-stage builders connect, find co-founders, and grow together. Built because
+            founder loneliness shouldn't exist.</p>
+          <a href="#early-access" class="el">Get Early Access →</a>
+        </div>
+      </div>
+      <div class="founders-row" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px;">
+        <div class="founder-card reveal" style="padding:28px;">
+          <div class="fq">"</div>
+          <div class="fav-row">
+            <div class="fav">D</div>
+            <div class="fai"><strong>Devansh Tiwari</strong><span>Founder & CEO, Bharvix · Lucknow 🇮🇳</span></div>
+          </div>
+          <blockquote>I built Foundri because I felt the loneliness of building alone. LinkedIn is a corporate job board. Discord is chaotic. WhatsApp groups can't scale. Young Indian founders need a place to find their tribe.</blockquote>
+          <div class="fbadges">
+            <span>IIT Madras (BS)</span>
+            <span>Chandigarh University, Lucknow</span>
+            <span>Building Bharvix</span>
+          </div>
+        </div>
+
+        <div class="founder-card reveal" style="padding:28px;">
+          <div class="fq">"</div>
+          <div class="fav-row">
+            <div class="fav" style="--c:#8B5CF6">H</div>
+            <div class="fai"><strong>Harshit Kumar</strong><span>Co-Founder, Foundri · India 🇮🇳</span></div>
+          </div>
+          <blockquote>Great products are built by great teams, but finding the right people early on is the hardest part. We're creating the operating system where true connections happen instantly, without the noise.</blockquote>
+          <div class="fbadges">
+            <span>IIT Madras (BS)</span>
+            <span>Co-Founder</span>
+            <span>Tech Innovator</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta-final">
+    <div class="container">
+      <div class="fct">
+        <div class="fct-glow"></div>
+        <div class="sec-tag">Join <span class="waitlist-count-display">497</span>+ Founders</div>
+        <h2 class="fct-h">Stop building<br>alone.</h2>
+        <p>Your co-founder might already be in the feed. Your first mentor is one post away. Your tribe is here.</p>
+        <div class="fct-btns">
+          <a href="#community" class="btn-pri large">Enter the Community</a>
+          <a href="#early-access" class="btn-out large">Secure Your Spot</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK -->
+  <section id="feedback" style="background:var(--bg2); border-top:1px solid var(--bdr2); padding-bottom:100px;">
+    <div class="container" style="max-width:600px;">
+      <div class="sec-tag" style="margin-bottom:16px; justify-content:center; display:flex; margin:0 auto 16px; width:fit-content;">Platform Feedback</div>
+      <h2 class="sec-h" style="text-align:center;">Help us improve <br><em>Foundri.</em></h2>
+      <form id="fbForm" action="https://api.web3forms.com/submit" method="POST" style="background:var(--card); padding:32px; border-radius:16px; border:1px solid var(--bdr2); margin-top:30px; box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+        <input type="hidden" name="access_key" value="18d56544-0edf-4191-b57f-532f214a7d1c">
+        <input type="hidden" name="subject" value="🌟 New Foundri Feedback / Rating!">
+        <p style="text-align:center; font-size:0.85rem; color:var(--muted); margin-bottom:12px;">Rate your experience</p>
+        <div class="stars" style="display:flex; justify-content:center; gap:12px; margin-bottom:24px; font-size:2.4rem; cursor:pointer; color:var(--dim); transition:color 0.2s;" id="starRating">
+           <span data-val="1" style="transition:color 0.2s;">★</span><span data-val="2" style="transition:color 0.2s;">★</span><span data-val="3" style="transition:color 0.2s;">★</span><span data-val="4" style="transition:color 0.2s;">★</span><span data-val="5" style="transition:color 0.2s;">★</span>
+        </div>
+        <input type="hidden" name="rating" id="fbRatingVal" value="" required>
+        <div class="fg">
+          <label>Any problems, bugs, or suggestions?</label>
+          <textarea name="message" rows="4" style="width:100%; background:var(--bg); border:1px solid var(--bdr2); border-radius:10px; color:var(--text); padding:16px; font-family:inherit; font-size:0.9rem; resize:vertical; outline:none; transition:border-color 0.2s;" placeholder="Tell us what you loved or what's broken... e.g. Add dark mode toggle!" required onfocus="this.style.borderColor='var(--fire)'" onblur="this.style.borderColor='var(--bdr2)'"></textarea>
+        </div>
+        <button class="btn-pri full" type="submit" style="margin-top:14px; padding:16px; font-size:1rem;" id="fbBtn">Send Feedback anonymously</button>
+      </form>
+      <div id="fbSuccess" style="display:none; text-align:center; padding:40px; background:var(--card); border:1px solid rgba(16, 185, 129, 0.3); border-radius:16px; margin-top:30px;">
+        <span style="font-size:3rem; margin-bottom:10px; display:block;">💚</span>
+        <h3 style="font-family:'Syne',sans-serif; font-size:1.2rem; color:var(--text);">Feedback received!</h3>
+        <p style="color:var(--muted); font-size:0.9rem; margin-top:8px;">Thank you for making Foundri better for everyone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="logo.png" alt="Foundri" class="foot-logo-img">
+          <p style="margin-top:10px;">Part of the Bharvix ecosystem.<br>Built in India, for India's builders.</p>
+          <div class="foot-soc">
+            <a href="https://instagram.com/bharvix" target="_blank">Instagram</a>
+            <a href="#community">Community</a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Platform</h4>
+          <a href="#features">Features</a>
+          <a href="#community">Community Feed</a>
+          <a href="#early-access">Early Access</a>
+        </div>
+        <div class="foot-col">
+          <h4>Bharvix</h4>
+          <a href="#">UniPost AI</a>
+          <a href="#about">About</a>
+          <a href="https://instagram.com/bharvix" target="_blank">@bharvix</a>
+        </div>
+      </div>
+      <div class="foot-btm">
+        <span>© 2025 Bharvix. All rights reserved.</span>
+        <span>Made with 🔥 in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -52,7 +52,7 @@ body{
 }
 
 /* CONTAINER */
-.container{max-width:1160px;margin:0 auto;padding:0 28px}
+.container{max-width:1160px;margin:0 ;padding:0 28px}
 
 /* TYPOGRAPHY */
 .sec-h{
@@ -736,7 +736,7 @@ footer{
 .hero-h1 { font-family:'Outfit', sans-serif; font-size:clamp(2.8rem, 8vw, 6.5rem); font-weight:700; line-height:1.05; letter-spacing:-0.03em; color:#fff; margin-bottom:28px; animation:fadeUp 0.8s 0.2s ease both; }
 .hero-desc { font-family:'Outfit', sans-serif; font-size:1.15rem; font-weight:300; color:#A1A1AA; line-height:1.6; margin-bottom:44px; animation:fadeUp 0.8s 0.4s ease both; }
 .hero-action { display:flex; align-items:center; gap:24px; animation:fadeUp 0.8s 0.6s ease both; flex-wrap:wrap; }
-.btn-dala { display:inline-flex; align-items:center; background:#7B61FF; color:#fff; font-family:'Outfit', sans-serif; font-weight:600; font-size:1rem; padding:16px 36px; border-radius:100px; text-decoration:none; transition:all 0.3s; box-shadow:0 10px 30px rgba(123,97,255,0.4); }
+.btn-dala { display:inline-flex; align-items:center; background:var(--fire); color:#fff; font-family:'Outfit', sans-serif; font-weight:600; font-size:1rem; padding:16px 36px; border-radius:100px; text-decoration:none; transition:all 0.3s; box-shadow:0 10px 30px rgba(255,107,43,.45); }
 .btn-dala:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 20px 50px rgba(123,97,255,0.6); }
 
 @media(max-width:900px){

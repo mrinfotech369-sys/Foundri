@@ -9,9 +9,7 @@
     content="India's community for early-stage founders, college builders, and young entrepreneurs. Connect. Build. Rise.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <!--
   ════════════════════════════════════════════════
   FORMS SETUP — Get user details directly in your email!
@@ -32,7 +30,9 @@
   <!-- NAV -->
   <nav id="nav">
     <div class="nav-inner">
-      <a href="#" class="logo">Foundri<sup>°</sup></a>
+      <a href="#" class="logo-link">
+        <img src="logo.png" alt="Foundri" class="nav-logo-img">
+      </a>
       <ul class="nav-links">
         <li><a href="#features">Features</a></li>
         <li><a href="#community">Community</a></li>
@@ -53,53 +53,33 @@
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="hero-wrap">
-      <div class="hero-l">
-        <div class="h-chip"><span class="chip-dot"></span>847 / 1000 Founding Spots Taken</div>
-        <h1 class="hero-h">
-          <span class="hl hl1">Where</span>
-          <span class="hl hl2"><em>Founders</em></span>
-          <span class="hl hl3">Are Forged.</span>
-        </h1>
-        <p class="hero-p">LinkedIn is too corporate. Discord is too noisy.<br>WhatsApp can't scale. You're building
-          something real —<br><strong>you deserve a real community.</strong></p>
-        <div class="hero-btns">
-          <a href="#community" class="btn-pri">Enter Community</a>
-          <a href="#early-access" class="btn-out">Get Early Access <span>→</span></a>
-        </div>
-        <div class="hero-proof">
-          <div class="proof-avs">
-            <div class="pav" style="--c:#FF6B2B">D</div>
-            <div class="pav" style="--c:#8B5CF6">A</div>
+  <!-- HERO (AWWWARDS DALA STYLE) -->
+  <section id="hero" style="position:relative; min-height:100vh; display:flex; align-items:center; background:#000; overflow:hidden;">
+    <!-- Ambient 3D Graphic positioned to the right -->
+    <img src="awwwards-bg.png" alt="3D Startup Ecosystem Network" style="position:absolute; right:-150px; top:50%; transform:translateY(-50%); height:110vh; object-fit:contain; opacity:0.85; filter:drop-shadow(0 0 40px rgba(138,43,226,0.3)); animation:dalaFloat 8s ease-in-out infinite alternate; pointer-events:none; z-index:0;">
+    
+    <div class="container hero-container" style="position:relative; z-index:10; display:flex; width:100%;">
+      <div class="hero-content" style="max-width:650px; padding-top:40px;">
+        <!-- Minimal Orange Tag -->
+        <div class="hero-tag" style="display:inline-block; font-size:0.75rem; font-weight:800; letter-spacing:0.15em; color:#FFB347; text-transform:uppercase; margin-bottom:20px; animation:fadeUp 0.8s ease both;">STOP BUILDING ALONE. START COLLABORATING.</div>
+        
+        <!-- Ultra Clean Left-Aligned Header -->
+        <h1 class="hero-h1" style="font-family:'Outfit', sans-serif; font-size:clamp(4rem, 8vw, 6.5rem); font-weight:700; line-height:0.95; letter-spacing:-0.03em; color:#fff; margin-bottom:28px; animation:fadeUp 0.8s 0.2s ease both;">Unlock collective<br>startup wisdom.</h1>
+        
+        <p class="hero-desc" style="font-family:'Outfit', sans-serif; font-size:1.15rem; font-weight:300; color:#A1A1AA; line-height:1.6; margin-bottom:44px; animation:fadeUp 0.8s 0.4s ease both;">
+          Plug into India's most ambitious shared brainpower. Ask the Foundri community to find a co-founder, validate your idea, or secure early funding. Focus on doing your best work with context, conviction, and clarity.
+        </p>
+        
+        <div class="hero-action" style="display:flex; align-items:center; gap:24px; animation:fadeUp 0.8s 0.6s ease both;">
+          <a href="#early-access" class="btn-dala" style="display:inline-flex; align-items:center; background:#7B61FF; color:#fff; font-family:'Outfit', sans-serif; font-weight:600; font-size:1rem; padding:16px 36px; border-radius:100px; text-decoration:none; transition:all 0.3s; box-shadow:0 10px 30px rgba(123,97,255,0.4);">REQUEST ACCESS</a>
+          
+          <div class="proof-avs" style="display:flex;">
+            <div class="pav" style="--c:#3B82F6">D</div>
             <div class="pav" style="--c:#10B981">P</div>
             <div class="pav" style="--c:#F59E0B">R</div>
             <div class="pav" style="--c:#EF4444">S</div>
-            <div class="pav more">+842</div>
+            <div class="pav more">+492</div>
           </div>
-          <p>Early founders already building on Foundri</p>
-        </div>
-      </div>
-      <div class="hero-r">
-        <div class="orb-ring r1"></div>
-        <div class="orb-ring r2"></div>
-        <div class="orb-ring r3"></div>
-        <div class="orb-core"></div>
-        <div class="hcard hc1">
-          <div class="hd" style="--c:#10B981"></div>
-          <div class="ht"><strong>Priya S.</strong><span>First paying customer! 🎉</span></div>
-        </div>
-        <div class="hcard hc2">
-          <div class="hd" style="--c:#8B5CF6"></div>
-          <div class="ht"><strong>Arjun K.</strong><span>Looking for technical co-founder</span></div>
-        </div>
-        <div class="hcard hc3">
-          <div class="hd" style="--c:#FF6B2B"></div>
-          <div class="ht"><strong>Devansh T.</strong><span>₹50k MRR unlocked 🔥</span></div>
-        </div>
-        <div class="hcard hc4">
-          <div class="hd" style="--c:#F59E0B"></div>
-          <div class="ht"><strong>Rahul M.</strong><span>Dev seeking startup to join</span></div>
         </div>
       </div>
     </div>
@@ -122,9 +102,9 @@
   <section id="stats">
     <div class="container">
       <div class="stats-row">
-        <div class="stt"><span class="stn" data-to="847">0</span><span class="stl">Founders Waiting</span></div>
+        <div class="stt"><span class="stn" data-to="497">0</span><span class="stl">Founders Waiting</span></div>
         <div class="std"></div>
-        <div class="stt"><span class="stn" data-to="153">0</span><span class="stl">Spots Left</span></div>
+        <div class="stt"><span class="stn" data-to="503">0</span><span class="stl">Spots Left</span></div>
         <div class="std"></div>
         <div class="stt"><span class="stn" data-to="100">0</span><span class="stl">% Free for Early Members</span></div>
         <div class="std"></div>
@@ -282,7 +262,7 @@
           </div>
         </div>
         <div class="comm-r">
-          <div class="chat-box">
+          <div class="chat-box" style="background:rgba(20, 18, 16, 0.6); backdrop-filter:blur(30px); border:1px solid rgba(255,107,43,0.15); box-shadow:0 30px 100px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,107,43,0.05); transform:perspective(1000px) rotateY(-5deg) translateY(-10px); transition:transform 0.5s;">
             <div class="chat-top">
               <div class="ct-logo">F°</div>
               <div class="ct-info"><strong>Foundri Community</strong><small><span class="ld sm"></span> <span
@@ -343,13 +323,13 @@
           <div class="ea-card">
             <div class="ea-prog-wrap">
               <div class="ea-prow">
-                <span><strong id="eaCount">847</strong>/1000 spots claimed</span>
-                <span class="ea-pct">84.7%</span>
+                <span><strong id="eaCount">497</strong>/1000 spots claimed</span>
+                <span class="ea-pct">49.7%</span>
               </div>
               <div class="ea-pbg">
                 <div class="ea-pfill" id="eaFill"></div>
               </div>
-              <p class="ea-pnote">🔥 Only <strong>153 spots</strong> remaining</p>
+              <p class="ea-pnote">🔥 Only <strong>503 spots</strong> remaining</p>
             </div>
             <form id="eaForm" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="18d56544-0edf-4191-b57f-532f214a7d1c">
@@ -390,7 +370,7 @@
             <div id="eaSuccess" class="ea-succ hidden">
               <div class="es-glow"></div>
               <div class="es-icon">🎉</div>
-              <h3>You're Founding Member #<span id="eaNum">848</span></h3>
+              <h3>You're Founding Member #<span id="eaNum">498</span></h3>
               <p>Welcome to Foundri. We'll email your community access invite soon.</p>
               <p class="es-tip">While you wait — jump into the live feed and introduce yourself!</p>
               <a href="#community" class="btn-pri" style="margin-top:20px;display:inline-flex">Go to Community →</a>
@@ -468,7 +448,7 @@
     <div class="container">
       <div class="fct">
         <div class="fct-glow"></div>
-        <div class="sec-tag">Join <span class="waitlist-count-display">847</span>+ Founders</div>
+        <div class="sec-tag">Join <span class="waitlist-count-display">497</span>+ Founders</div>
         <h2 class="fct-h">Stop building<br>alone.</h2>
         <p>Your co-founder might already be in the feed. Your first mentor is one post away. Your tribe is here.</p>
         <div class="fct-btns">
@@ -511,8 +491,8 @@
     <div class="container">
       <div class="foot-grid">
         <div class="foot-brand">
-          <div class="logo">Foundri<sup>°</sup></div>
-          <p>Part of the Bharvix ecosystem.<br>Built in India, for India's builders.</p>
+          <img src="logo.png" alt="Foundri" class="foot-logo-img">
+          <p style="margin-top:10px;">Part of the Bharvix ecosystem.<br>Built in India, for India's builders.</p>
           <div class="foot-soc">
             <a href="https://instagram.com/bharvix" target="_blank">Instagram</a>
             <a href="#community">Community</a>

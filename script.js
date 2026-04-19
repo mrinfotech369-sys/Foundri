@@ -185,7 +185,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   const SIGNUP_TOPIC = 'foundri_live_signups_v2';
   const NTFY_SIGNUP_URL = `https://ntfy.sh/${SIGNUP_TOPIC}`;
   
-  let localWaitlist = parseInt(localStorage.getItem('foundri_base_signups') || '847');
+  let localWaitlist = parseInt(localStorage.getItem('foundri_base_signups') || '497');
   
   function updateWaitlistDOM(count) {
      // Waitlist counters
@@ -196,9 +196,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
      // Percentage
      document.querySelectorAll('.ea-pct').forEach(e => e.textContent = (count / 10).toFixed(1) + '%');
      
-     // Stats grid (need to update data-to so the animation doesn't revert to 847)
+     // Stats grid (need to update data-to so the animation doesn't revert to 497)
      document.querySelectorAll('.stn').forEach(el => {
-        if(el.dataset.to == "847" || el.dataset.to == (count-1)) {
+        if(el.dataset.to == "497" || el.dataset.to == (count-1)) {
            el.dataset.to = count;
            el.textContent = count; // update immediate
         }
@@ -207,7 +207,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
      // Spots left
      const left = 1000 - count;
      document.querySelectorAll('.stn').forEach(el => {
-        if(el.dataset.to == "153" || el.dataset.to == (left+1)) {
+        if(el.dataset.to == "503" || el.dataset.to == (left+1)) {
            el.dataset.to = left;
            el.textContent = left;
         }
@@ -566,4 +566,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       c.style.setProperty('transform', `translateX(${x * d * 12}px) translateY(${y * d * 10}px)`);
     });
   }, { passive: true });
+})();
+
+// ─── FABULOUS GLOBAL SCROLL ANIMATIONS ──────────
+(function() {
+  const ob = new IntersectionObserver((es) => {
+    es.forEach(e => {
+      if(e.isIntersecting) {
+        e.target.classList.add('visible');
+        ob.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+  document.querySelectorAll('.reveal').forEach(el => ob.observe(el));
 })();

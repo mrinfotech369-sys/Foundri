@@ -639,6 +639,15 @@ section{position:relative;z-index:10;padding:96px 0}
 }
 .el:hover{opacity:.72}
 
+.feedback{
+  background:var(--card);border:1px solid var(--bdr2);border-radius:20px;
+  padding:32px;position:relative;overflow:hidden; margin-left: 25%; margin-right: 25%;
+}
+.feedback::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--fire),var(--amber),transparent);
+}
+
 .founder-card{
   background:var(--card);border:1px solid var(--bdr2);
   border-radius:20px;padding:36px;position:relative;overflow:hidden;
@@ -757,6 +766,7 @@ footer{
   .fct{padding:40px 20px}
   .container{padding:0 18px}
   .fg-2{grid-template-columns:1fr}
+  .feedback{padding:22px; margin-left: 22px; margin-right: 22px;}
 }
 @media(max-width:600px){
   .hero-h{font-size:3.2rem}
@@ -774,6 +784,7 @@ footer{
   .btn-dala { width: 100%; justify-content: center; }
   .hero-tag { font-size: 0.65rem; display: block; margin: 0 auto 20px; }
   .proof-avs { margin: 0 auto; justify-content: center; }
+  .feedback{padding:22px; margin-left: 22px; margin-right: 22px;}
 }
 
 /* --- LOGO IMAGE STYLES --- */

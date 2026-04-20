@@ -739,7 +739,7 @@ footer{
 .btn-dala { display:inline-flex; align-items:center; background:var(--fire); color:#fff; font-family:'Outfit', sans-serif; font-weight:600; font-size:1rem; padding:16px 36px; border-radius:100px; text-decoration:none; transition:all 0.3s; box-shadow:0 10px 30px rgba(255,107,43,.45); }
 .btn-dala:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 20px 50px rgba(123,97,255,0.6); }
 .feedback{ max-width: none;}
-.cta-feedback{ padding-left: 200px; padding-right: 200px;}
+
 
 @media(max-width:900px){
   .nav-links,.nav-r{display:none}
